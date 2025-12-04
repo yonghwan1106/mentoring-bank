@@ -26,7 +26,7 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import { MENTORINGS } from '@/lib/mock-data';
-import { SKILL_CATEGORIES, DISTRICTS } from '@/lib/types';
+import { SKILL_CATEGORIES, REGIONS } from '@/lib/types';
 import { SkillCategory } from '@/lib/types';
 
 export default function ExplorePage() {
@@ -77,6 +77,8 @@ export default function ExplorePage() {
     .filter(([, v]) => v.direction === 'senior-to-youth');
   const youthToSeniorCategories = Object.entries(SKILL_CATEGORIES)
     .filter(([, v]) => v.direction === 'youth-to-senior');
+  const bidirectionalCategories = Object.entries(SKILL_CATEGORIES)
+    .filter(([, v]) => v.direction === 'bidirectional');
 
   return (
     <div className="min-h-screen bg-background">
@@ -129,17 +131,25 @@ export default function ExplorePage() {
                     {value.icon} {value.name}
                   </SelectItem>
                 ))}
+                <SelectItem value="divider-3" disabled>
+                  ── 양방향 ──
+                </SelectItem>
+                {bidirectionalCategories.map(([key, value]) => (
+                  <SelectItem key={key} value={key}>
+                    {value.icon} {value.name}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
 
             <Select value={districtFilter} onValueChange={setDistrictFilter}>
-              <SelectTrigger className="w-[140px]">
+              <SelectTrigger className="w-[160px]">
                 <SelectValue placeholder="지역" />
               </SelectTrigger>
               <SelectContent>
-                {DISTRICTS.map((district) => (
-                  <SelectItem key={district} value={district}>
-                    {district}
+                {REGIONS.map((region) => (
+                  <SelectItem key={region} value={region}>
+                    {region}
                   </SelectItem>
                 ))}
               </SelectContent>
