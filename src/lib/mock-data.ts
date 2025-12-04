@@ -116,6 +116,16 @@ const YOUTH_SKILLS: { category: SkillCategory; skills: { name: string; descripti
       { name: '스마트홈', description: 'AI스피커, 스마트TV, IoT 기기' },
     ]
   },
+  {
+    category: 'ai-basics',
+    skills: [
+      { name: 'ChatGPT 활용', description: '대화형 AI로 궁금한 것 물어보기, 글쓰기 도움받기' },
+      { name: 'AI 번역', description: '파파고, 구글번역으로 외국어 번역하기' },
+      { name: 'AI 사진편집', description: 'AI로 사진 보정, 배경 제거, 복원하기' },
+      { name: 'AI 음성비서', description: '시리, 빅스비, 구글 어시스턴트 활용법' },
+      { name: 'AI 검색', description: 'AI 검색 엔진으로 더 똑똑하게 정보 찾기' },
+    ]
+  },
 ];
 
 // 멘토 생성 함수
@@ -208,6 +218,7 @@ function generateMentoring(id: number, mentor: Mentor): Mentoring {
     'life-it': ['모바일 뱅킹 시작하기', '키오스크 두려움 극복하기', '배달앱으로 맛있는 한끼', '교통앱으로 편한 이동'],
     'sns': ['유튜브 200% 활용법', '인스타그램 첫걸음', '밴드로 모임 관리하기', '네이버 카페 활용법'],
     'practical-tech': ['가족과 화상통화하기', '온라인 쇼핑 마스터', '소중한 사진 클라우드 백업', '스마트홈 기기 사용법'],
+    'ai-basics': ['ChatGPT로 시작하는 AI 첫걸음', 'AI로 외국어 번역 쉽게하기', 'AI 음성비서 활용법', 'AI로 사진 예쁘게 편집하기', 'AI 검색으로 똑똑하게 정보 찾기'],
   };
 
   const titleList = titles[skill.category] || ['멘토링'];

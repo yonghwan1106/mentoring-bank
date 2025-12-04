@@ -36,7 +36,8 @@ export type SkillCategory =
   | 'smartphone'            // 스마트폰
   | 'life-it'               // 생활 IT
   | 'sns'                   // SNS
-  | 'practical-tech';       // 실용 기술
+  | 'practical-tech'        // 실용 기술
+  | 'ai-basics';            // AI 활용
 
 export const SKILL_CATEGORIES: Record<SkillCategory, { name: string; icon: string; direction: 'senior-to-youth' | 'youth-to-senior' }> = {
   'traditional-cooking': { name: '전통 요리', icon: '🍳', direction: 'senior-to-youth' },
@@ -47,6 +48,7 @@ export const SKILL_CATEGORIES: Record<SkillCategory, { name: string; icon: strin
   'life-it': { name: '생활 IT', icon: '💻', direction: 'youth-to-senior' },
   'sns': { name: 'SNS', icon: '📸', direction: 'youth-to-senior' },
   'practical-tech': { name: '실용 기술', icon: '🛒', direction: 'youth-to-senior' },
+  'ai-basics': { name: 'AI 활용', icon: '🤖', direction: 'youth-to-senior' },
 };
 
 // 멘토링 프로그램 타입
