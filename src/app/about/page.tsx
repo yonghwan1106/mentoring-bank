@@ -36,8 +36,8 @@ export default function AboutPage() {
               프로젝트 소개
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              <strong className="text-primary">멘토링 뱅크</strong>는 시니어의 삶의 지혜와 청년의 디지털 역량을
-              교환하여 세대 간 단절을 해소하는 시민 참여형 플랫폼입니다.
+              <strong className="text-primary">멘토링 뱅크</strong>는 AI 시대, 세대가 함께 성장하는
+              양방향 멘토링 플랫폼입니다. 스킬 교환을 넘어 고독 해소와 정서적 연결까지.
             </p>
           </div>
         </div>
@@ -66,8 +66,8 @@ export default function AboutPage() {
                       <span className="text-xs font-bold text-destructive">1</span>
                     </div>
                     <div>
-                      <p className="font-medium">초고령사회 진입</p>
-                      <p className="text-sm text-muted-foreground">2025년 65세 이상 인구 20% 돌파</p>
+                      <p className="font-medium">초고령사회 본격 진입</p>
+                      <p className="text-sm text-muted-foreground">2025년 65세 이상 인구 <strong>1천만 명</strong> 돌파</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -75,8 +75,8 @@ export default function AboutPage() {
                       <span className="text-xs font-bold text-destructive">2</span>
                     </div>
                     <div>
-                      <p className="font-medium">시니어 사회적 고립</p>
-                      <p className="text-sm text-muted-foreground">독거노인 약 190만 명, 사회 참여 기회 부족</p>
+                      <p className="font-medium">중장년 고독사 위기</p>
+                      <p className="text-sm text-muted-foreground">2024년 고독사 3,924명, 50~60대 남성 집중</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -84,8 +84,8 @@ export default function AboutPage() {
                       <span className="text-xs font-bold text-destructive">3</span>
                     </div>
                     <div>
-                      <p className="font-medium">세대 간 갈등 심화</p>
-                      <p className="text-sm text-muted-foreground">MZ세대 vs 기성세대 인식 격차 확대</p>
+                      <p className="font-medium">청년 취업난 + 세대 갈등</p>
+                      <p className="text-sm text-muted-foreground">청년 취업 36개월 연속 감소, 정년 연장 논의</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -93,8 +93,8 @@ export default function AboutPage() {
                       <span className="text-xs font-bold text-destructive">4</span>
                     </div>
                     <div>
-                      <p className="font-medium">시니어 지식/경험 사장</p>
-                      <p className="text-sm text-muted-foreground">오랜 경험과 전통 지식이 전승되지 못함</p>
+                      <p className="font-medium">AI 시대 신디지털 격차</p>
+                      <p className="text-sm text-muted-foreground">스마트폰 넘어 생성형 AI 활용 격차 확대</p>
                     </div>
                   </div>
                 </CardContent>
@@ -161,10 +161,23 @@ export default function AboutPage() {
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                     <RefreshCw className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="font-bold text-lg mb-2">양방향 교환</h3>
+                  <h3 className="font-bold text-lg mb-2">AI 동반 성장</h3>
                   <p className="text-sm text-muted-foreground">
-                    일방적 지원이 아닌<br />
-                    서로 가르치고 배우는 관계
+                    세대가 함께 AI를 배우며<br />
+                    서로 도우며 성장하는 관계
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center">
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <Heart className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">고독 해소</h3>
+                  <p className="text-sm text-muted-foreground">
+                    안부 멘토링으로<br />
+                    외로움 극복과 정서적 연결
                   </p>
                 </CardContent>
               </Card>
@@ -176,21 +189,8 @@ export default function AboutPage() {
                   </div>
                   <h3 className="font-bold text-lg mb-2">시간 크레딧</h3>
                   <p className="text-sm text-muted-foreground">
-                    1시간 가르치면<br />
+                    1시간 교류하면<br />
                     1시간 배울 수 있는 크레딧
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <Heart className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="font-bold text-lg mb-2">세대 통합</h3>
-                  <p className="text-sm text-muted-foreground">
-                    세대 간 격차를 좁히고<br />
-                    상호 이해를 높이는 소통
                   </p>
                 </CardContent>
               </Card>
@@ -286,31 +286,31 @@ export default function AboutPage() {
                 <CardContent className="pt-6">
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
-                      <span className="text-2xl">🍳</span>
+                      <span className="text-2xl">💡</span>
                       <div>
-                        <p className="font-medium">전통 요리</p>
-                        <p className="text-sm text-muted-foreground">김장, 떡 만들기, 장 담그기</p>
+                        <p className="font-medium">인생 경험</p>
+                        <p className="text-sm text-muted-foreground">경제위기 생존법, 취업 면접, 인간관계</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="text-2xl">🔧</span>
+                      <span className="text-2xl">🧘</span>
                       <div>
-                        <p className="font-medium">생활 기술</p>
-                        <p className="text-sm text-muted-foreground">옷 수선, DIY 수리, 정원 가꾸기</p>
+                        <p className="font-medium">마음 건강</p>
+                        <p className="text-sm text-muted-foreground">명상, 스트레스 관리, 긍정 마인드</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">🍳</span>
+                      <div>
+                        <p className="font-medium">전통 요리/집밥</p>
+                        <p className="text-sm text-muted-foreground">김장, 1인분 집밥 레시피</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-2xl">🎨</span>
                       <div>
                         <p className="font-medium">전통 문화</p>
-                        <p className="text-sm text-muted-foreground">서예, 사군자, 한복 입기, 다도</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-2xl">💡</span>
-                      <div>
-                        <p className="font-medium">인생 경험</p>
-                        <p className="text-sm text-muted-foreground">자녀 교육, 재테크, 인간관계</p>
+                        <p className="text-sm text-muted-foreground">서예, 사군자, 다도</p>
                       </div>
                     </div>
                   </div>
@@ -323,36 +323,36 @@ export default function AboutPage() {
                     <Users className="w-5 h-5" />
                     청년 → 시니어
                   </CardTitle>
-                  <CardDescription>디지털 역량</CardDescription>
+                  <CardDescription>AI 시대 디지털 역량</CardDescription>
                 </CardHeader>
                 <CardContent className="pt-6">
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
-                      <span className="text-2xl">📱</span>
+                      <span className="text-2xl">🤖</span>
                       <div>
-                        <p className="font-medium">스마트폰</p>
-                        <p className="text-sm text-muted-foreground">카카오톡, 사진 관리, 앱 설치</p>
+                        <p className="font-medium">AI 활용</p>
+                        <p className="text-sm text-muted-foreground">ChatGPT, AI 사진편집, AI 건강정보</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="text-2xl">💻</span>
+                      <span className="text-2xl">🛡️</span>
                       <div>
-                        <p className="font-medium">생활 IT</p>
-                        <p className="text-sm text-muted-foreground">인터넷 뱅킹, 키오스크, 배달앱</p>
+                        <p className="font-medium">디지털 안전</p>
+                        <p className="text-sm text-muted-foreground">보이스피싱 예방, 스팸 차단</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">📱</span>
+                      <div>
+                        <p className="font-medium">스마트폰/생활IT</p>
+                        <p className="text-sm text-muted-foreground">키오스크, 배달앱, 인터넷 뱅킹</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-2xl">📸</span>
                       <div>
-                        <p className="font-medium">SNS</p>
-                        <p className="text-sm text-muted-foreground">유튜브, 인스타그램, 밴드</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-2xl">🛒</span>
-                      <div>
-                        <p className="font-medium">실용 기술</p>
-                        <p className="text-sm text-muted-foreground">화상통화, 온라인 쇼핑, 예약</p>
+                        <p className="font-medium">SNS/숏폼</p>
+                        <p className="text-sm text-muted-foreground">유튜브, 릴스, 가족앨범 공유</p>
                       </div>
                     </div>
                   </div>
@@ -383,24 +383,24 @@ export default function AboutPage() {
                 </thead>
                 <tbody>
                   <tr className="border-b">
-                    <td className="py-4 px-4 font-medium">시민</td>
-                    <td className="py-4 px-4 text-muted-foreground">일방향 수혜자, 세대 단절</td>
-                    <td className="py-4 px-4 text-primary">양방향 참여자, 세대 소통</td>
-                  </tr>
-                  <tr className="border-b">
                     <td className="py-4 px-4 font-medium">시니어</td>
-                    <td className="py-4 px-4 text-muted-foreground">사회적 고립, 역량 사장</td>
-                    <td className="py-4 px-4 text-primary">적극적 사회 참여, 역량 발휘</td>
+                    <td className="py-4 px-4 text-muted-foreground">사회적 고립, 고독사 위험</td>
+                    <td className="py-4 px-4 text-primary">정기적 교류, 외로움 해소</td>
                   </tr>
                   <tr className="border-b">
                     <td className="py-4 px-4 font-medium">청년</td>
-                    <td className="py-4 px-4 text-muted-foreground">전통 단절, 세대 갈등</td>
-                    <td className="py-4 px-4 text-primary">전통 계승, 세대 이해</td>
+                    <td className="py-4 px-4 text-muted-foreground">취업난, 인생 멘토 부재</td>
+                    <td className="py-4 px-4 text-primary">위기 극복 지혜, 정서적 지지</td>
                   </tr>
                   <tr className="border-b">
-                    <td className="py-4 px-4 font-medium">지속성</td>
-                    <td className="py-4 px-4 text-muted-foreground">일회성 프로그램</td>
-                    <td className="py-4 px-4 text-primary">크레딧 기반 지속 참여</td>
+                    <td className="py-4 px-4 font-medium">AI 격차</td>
+                    <td className="py-4 px-4 text-muted-foreground">시니어 AI 소외</td>
+                    <td className="py-4 px-4 text-primary">세대 동반 AI 학습</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-4 px-4 font-medium">세대 관계</td>
+                    <td className="py-4 px-4 text-muted-foreground">갈등과 단절</td>
+                    <td className="py-4 px-4 text-primary">상호 이해와 다정함</td>
                   </tr>
                 </tbody>
               </table>
@@ -427,13 +427,13 @@ export default function AboutPage() {
                     </div>
                     <div>
                       <CardTitle className="text-lg">1단계: 파일럿 운영 (6개월)</CardTitle>
-                      <CardDescription>용인시 3개 구 시범 운영</CardDescription>
+                      <CardDescription>수도권 3개 광역시도 시범 운영</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <ul className="list-disc list-inside text-muted-foreground space-y-1">
-                    <li>수지구, 기흥구, 처인구 시범 운영</li>
+                    <li>서울, 경기, 인천 시범 운영</li>
                     <li>주민센터, 복지관 연계 홍보</li>
                     <li>초기 사용자 피드백 수집</li>
                   </ul>
@@ -447,14 +447,14 @@ export default function AboutPage() {
                       <Building2 className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <CardTitle className="text-lg">2단계: 경기도 확대 (12개월)</CardTitle>
-                      <CardDescription>경기도 전역으로 서비스 확대</CardDescription>
+                      <CardTitle className="text-lg">2단계: 광역시 확대 (12개월)</CardTitle>
+                      <CardDescription>6대 광역시 및 세종시 확대</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <ul className="list-disc list-inside text-muted-foreground space-y-1">
-                    <li>경기도 31개 시군 확대</li>
+                    <li>부산, 대구, 대전, 광주, 울산, 세종 확대</li>
                     <li>지자체별 맞춤 운영</li>
                     <li>성과 지표 관리 체계 구축</li>
                   </ul>
@@ -469,13 +469,13 @@ export default function AboutPage() {
                     </div>
                     <div>
                       <CardTitle className="text-lg">3단계: 전국 확산 (지속)</CardTitle>
-                      <CardDescription>전국 17개 광역시도 확대</CardDescription>
+                      <CardDescription>전국 17개 광역시도 전면 확대</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <ul className="list-disc list-inside text-muted-foreground space-y-1">
-                    <li>전국 단위 서비스 확대</li>
+                    <li>9개 도 지역 확대 (강원, 충북, 충남, 전북, 전남, 경북, 경남, 제주)</li>
                     <li>광역-기초 연계 운영 체계</li>
                     <li>한국형 시간은행 모델 확립</li>
                   </ul>
@@ -491,12 +491,12 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="outline" className="mb-4">제안 팀</Badge>
-            <h2 className="text-3xl font-bold mb-8">용인블루</h2>
+            <h2 className="text-3xl font-bold mb-8">시민연결</h2>
 
             <Card className="max-w-md mx-auto">
               <CardContent className="pt-6">
                 <p className="text-muted-foreground mb-6">
-                  용인시 시민사회 활성화를 위해 모인 시민 팀입니다.
+                  대한민국 시민사회 활성화를 위해 모인 시민 팀입니다.
                   세대를 연결하고 지역 공동체를 강화하는 정책 아이디어를 제안합니다.
                 </p>
                 <div className="flex justify-center gap-4">

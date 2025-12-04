@@ -36,11 +36,11 @@ export default function HomePage() {
               <span className="text-primary">멘토링</span> 뱅크
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-4">
-              세대를 잇는 재능 교환 플랫폼
+              AI 시대, 세대가 함께 성장하는 플랫폼
             </p>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              시니어의 삶의 지혜와 청년의 디지털 역량을 교환합니다.<br />
-              <strong className="text-foreground">가르침은 배움이 되고, 세대는 하나가 됩니다.</strong>
+              스킬 교환을 넘어 고독 해소와 정서적 연결까지.<br />
+              <strong className="text-foreground">가르치고 배우는 관계에서, 함께 성장하는 동반자로.</strong>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
@@ -100,26 +100,12 @@ export default function HomePage() {
               <div className="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full" />
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Coins className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle>1. 크레딧 받기</CardTitle>
-                <CardDescription>
-                  가입 시 3 크레딧을 무료로 받아요.<br />
-                  내 재능을 나누면 크레딧이 쌓여요.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full" />
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <RefreshCw className="w-6 h-6 text-primary" />
                 </div>
-                <CardTitle>2. 재능 교환하기</CardTitle>
+                <CardTitle>1. AI 함께 배우기</CardTitle>
                 <CardDescription>
-                  크레딧으로 배우고 싶은 멘토링을 신청하세요.<br />
-                  내 재능을 가르치면 크레딧을 얻어요.
+                  세대가 함께 ChatGPT, AI 활용법을 배워요.<br />
+                  서로 도우며 AI 시대에 적응해요.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -130,10 +116,24 @@ export default function HomePage() {
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Heart className="w-6 h-6 text-primary" />
                 </div>
-                <CardTitle>3. 세대와 연결되기</CardTitle>
+                <CardTitle>2. 안부 나누기</CardTitle>
                 <CardDescription>
-                  멘토링을 통해 세대를 뛰어넘는 소통을 해요.<br />
-                  서로에게 배우며 함께 성장해요.
+                  주 1회 안부 전화로 외로움을 덜어요.<br />
+                  정기적 교류로 고독을 해소해요.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full" />
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <Coins className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle>3. 크레딧으로 교환</CardTitle>
+                <CardDescription>
+                  1시간 교류하면 1크레딧을 얻어요.<br />
+                  크레딧으로 다른 멘토링을 받아요.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -181,9 +181,9 @@ export default function HomePage() {
                 <div className="flex items-center gap-2 mb-2">
                   <Badge variant="secondary">청년 → 시니어</Badge>
                 </div>
-                <CardTitle className="text-xl">디지털 역량</CardTitle>
+                <CardTitle className="text-xl">AI 시대 디지털 역량</CardTitle>
                 <CardDescription>
-                  편리한 디지털 세상을 함께 경험합니다
+                  AI와 디지털 세상을 함께 경험합니다
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -192,6 +192,33 @@ export default function HomePage() {
                     .filter(([, v]) => v.direction === 'youth-to-senior')
                     .map(([key, value]) => (
                       <div key={key} className="flex items-center gap-2 p-2 rounded-lg bg-muted">
+                        <span className="text-2xl">{value.icon}</span>
+                        <span className="text-sm font-medium">{value.name}</span>
+                      </div>
+                    ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Bidirectional - Companionship */}
+          <div className="max-w-3xl mx-auto mt-8">
+            <Card className="border-primary/30 bg-primary/5">
+              <CardHeader className="text-center">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <Badge className="bg-primary">양방향</Badge>
+                </div>
+                <CardTitle className="text-xl">안부/정서교류</CardTitle>
+                <CardDescription>
+                  세대를 넘어 서로의 안부를 묻고 정서적으로 연결됩니다
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  {Object.entries(SKILL_CATEGORIES)
+                    .filter(([, v]) => v.direction === 'bidirectional')
+                    .map(([key, value]) => (
+                      <div key={key} className="flex items-center gap-2 p-2 rounded-lg bg-background">
                         <span className="text-2xl">{value.icon}</span>
                         <span className="text-sm font-medium">{value.name}</span>
                       </div>
@@ -340,9 +367,21 @@ export default function HomePage() {
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <RefreshCw className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">양방향 교환</h3>
+                <h3 className="font-semibold mb-2">AI 동반 성장</h3>
                 <p className="text-sm text-muted-foreground">
-                  일방적 지원이 아닌<br />서로 가르치고 배우는 관계
+                  세대가 함께 AI를 배우며<br />서로 도우며 성장해요
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <Heart className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold mb-2">고독 해소</h3>
+                <p className="text-sm text-muted-foreground">
+                  정기적 안부로 외로움 극복<br />정서적 연결을 만들어요
                 </p>
               </CardContent>
             </Card>
@@ -352,9 +391,9 @@ export default function HomePage() {
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <Users className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">세대 통합</h3>
+                <h3 className="font-semibold mb-2">세대 간 다정함</h3>
                 <p className="text-sm text-muted-foreground">
-                  세대 간 격차를 좁히고<br />상호 이해를 높이는 소통
+                  갈등 넘어 상호 이해<br />따뜻한 세대 관계 형성
                 </p>
               </CardContent>
             </Card>
@@ -364,21 +403,9 @@ export default function HomePage() {
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">신뢰 기반</h3>
+                <h3 className="font-semibold mb-2">디지털 안전</h3>
                 <p className="text-sm text-muted-foreground">
-                  평가 시스템과 인증 배지로<br />안전한 만남을 보장
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-semibold mb-2">지속 가능</h3>
-                <p className="text-sm text-muted-foreground">
-                  크레딧 시스템으로<br />자발적 참여가 이어지는 구조
+                  보이스피싱, 스팸 예방<br />시니어 디지털 안전 지킴이
                 </p>
               </CardContent>
             </Card>

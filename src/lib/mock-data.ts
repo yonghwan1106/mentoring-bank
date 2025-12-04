@@ -28,6 +28,10 @@ const BADGES: Badge[] = [
   { id: 'badge-8', name: '디지털 도우미', description: '디지털 멘토링 10회', icon: '📱', earnedAt: '2025-08-10' },
   { id: 'badge-9', name: '전통 수호자', description: '전통문화 멘토링 10회', icon: '🏛️', earnedAt: '2025-09-05' },
   { id: 'badge-10', name: '동네 영웅', description: '같은 지역 20회 활동', icon: '🦸', earnedAt: '2025-10-15' },
+  { id: 'badge-11', name: 'AI 동반자', description: '세대 동반 AI 학습 5회 완료', icon: '🤖', earnedAt: '2025-11-01' },
+  { id: 'badge-12', name: '따뜻한 안부', description: '안부 멘토링 10회 완료', icon: '💕', earnedAt: '2025-11-10' },
+  { id: 'badge-13', name: '고독 해소 히어로', description: '정서 교류로 외로움 극복 도움', icon: '🌈', earnedAt: '2025-11-20' },
+  { id: 'badge-14', name: '디지털 안전 지킴이', description: '디지털 안전 멘토링 5회', icon: '🛡️', earnedAt: '2025-12-01' },
 ];
 
 // 시니어 멘토 스킬
@@ -40,6 +44,7 @@ const SENIOR_SKILLS: { category: SkillCategory; skills: { name: string; descript
       { name: '장 담그기', description: '된장, 고추장, 간장 담그는 법' },
       { name: '전통 반찬', description: '나물, 젓갈, 장아찌 만들기' },
       { name: '명절 음식', description: '설, 추석 명절 음식 준비' },
+      { name: '혼밥 집밥 레시피', description: '간단하고 건강한 1인분 요리법' },
     ]
   },
   {
@@ -70,6 +75,17 @@ const SENIOR_SKILLS: { category: SkillCategory; skills: { name: string; descript
       { name: '인간관계', description: '직장생활, 가족관계, 이웃관계 노하우' },
       { name: '건강 관리', description: '건강 유지 비결, 운동, 식이요법' },
       { name: '은퇴 준비', description: '은퇴 후 생활 설계, 취미 찾기' },
+      { name: '경제 위기 생존법', description: 'IMF, 금융위기 등 어려운 시기 극복 경험담' },
+      { name: '취업/면접 노하우', description: '수십 년 직장생활에서 얻은 실전 조언' },
+    ]
+  },
+  {
+    category: 'mental-wellness',
+    skills: [
+      { name: '명상과 마음 다스리기', description: '마음을 안정시키는 명상법, 호흡법' },
+      { name: '인생 상담', description: '삶의 고민을 나누고 조언해드려요' },
+      { name: '스트레스 관리', description: '오랜 경험에서 얻은 스트레스 해소법' },
+      { name: '긍정적 사고법', description: '어려움을 이겨내는 마음가짐' },
     ]
   },
 ];
@@ -104,6 +120,8 @@ const YOUTH_SKILLS: { category: SkillCategory; skills: { name: string; descripti
       { name: '밴드', description: '모임 가입, 게시글 작성, 일정 관리' },
       { name: '네이버 카페', description: '카페 가입, 글쓰기, 댓글 달기' },
       { name: '블로그', description: '블로그 개설, 글 작성, 이웃 관리' },
+      { name: '숏폼 영상 만들기', description: '릴스, 쇼츠로 재미있는 영상 제작' },
+      { name: '가족 앨범 공유', description: '구글포토, 네이버 클라우드로 가족사진 공유' },
     ]
   },
   {
@@ -124,6 +142,35 @@ const YOUTH_SKILLS: { category: SkillCategory; skills: { name: string; descripti
       { name: 'AI 사진편집', description: 'AI로 사진 보정, 배경 제거, 복원하기' },
       { name: 'AI 음성비서', description: '시리, 빅스비, 구글 어시스턴트 활용법' },
       { name: 'AI 검색', description: 'AI 검색 엔진으로 더 똑똑하게 정보 찾기' },
+      { name: 'AI로 손주 사진 꾸미기', description: 'AI 앱으로 사진을 예쁘게 편집, 콜라주 만들기' },
+      { name: 'AI로 건강 정보 찾기', description: 'AI에게 건강 관련 궁금증 물어보기' },
+      { name: 'AI 음성 메모', description: '말로 메모하고 AI가 정리해주는 앱 활용' },
+      { name: '세대 동반 AI 학습', description: '청년-시니어가 함께 AI 과제 수행하기' },
+    ]
+  },
+  {
+    category: 'digital-safety',
+    skills: [
+      { name: 'AI 스팸 문자 차단', description: '스팸 필터 설정, 의심 문자 구별법' },
+      { name: '보이스피싱 예방', description: '사기 전화 유형과 대처법' },
+      { name: '개인정보 보호', description: '비밀번호 관리, 개인정보 유출 방지' },
+      { name: '안전한 결제', description: '온라인 결제 시 주의사항, 인증 방법' },
+      { name: '가짜뉴스 구별', description: 'AI 시대 허위정보 판별하는 방법' },
+    ]
+  },
+];
+
+// 양방향 스킬 (안부/정서교류)
+const COMPANIONSHIP_SKILLS: { category: SkillCategory; skills: { name: string; description: string }[] }[] = [
+  {
+    category: 'companionship',
+    skills: [
+      { name: '주간 안부 전화', description: '일주일에 한 번 안부를 묻는 따뜻한 대화' },
+      { name: '영상 안부 인사', description: '화상통화로 얼굴 보며 안부 나누기' },
+      { name: '함께 산책하기', description: '동네를 함께 걸으며 대화 나누기' },
+      { name: '경험 인터뷰', description: '시니어의 인생 이야기를 청년이 기록하기' },
+      { name: '세대 간 토크', description: '서로의 세대 문화에 대해 이야기 나누기' },
+      { name: '취미 공유', description: '각자의 취미를 소개하고 함께 즐기기' },
     ]
   },
 ];
@@ -140,8 +187,8 @@ function generateMentor(id: number, isSenior: boolean): Mentor {
     ? Math.floor(Math.random() * 20) + 55  // 55-74세
     : Math.floor(Math.random() * 15) + 20; // 20-34세
 
-  const districts = ['수지구', '기흥구', '처인구'];
-  const district = districts[Math.floor(Math.random() * districts.length)];
+  const regions = ['서울특별시', '부산광역시', '대구광역시', '인천광역시', '광주광역시', '대전광역시', '울산광역시', '세종특별자치시', '경기도', '강원특별자치도', '충청북도', '충청남도', '전북특별자치도', '전라남도', '경상북도', '경상남도', '제주특별자치도'];
+  const district = regions[Math.floor(Math.random() * regions.length)];
 
   const skillPool = isSenior ? SENIOR_SKILLS : YOUTH_SKILLS;
   const numSkills = Math.floor(Math.random() * 3) + 1;
@@ -185,7 +232,7 @@ function generateMentor(id: number, isSenior: boolean): Mentor {
     age,
     generation: isSenior ? 'senior' : 'youth',
     profileImage: getProfileImage(id),
-    location: '용인시',
+    location: district,
     district,
     bio: bios[Math.floor(Math.random() * bios.length)],
     skills,
@@ -210,15 +257,18 @@ function generateMentoring(id: number, mentor: Mentor): Mentoring {
   const categoryInfo = SKILL_CATEGORIES[skill.category];
 
   const titles = {
-    'traditional-cooking': ['집에서 배우는 전통 김장', '어머니표 떡 만들기 교실', '우리집 장 담그기', '손맛 가득 전통 반찬'],
+    'traditional-cooking': ['집에서 배우는 전통 김장', '어머니표 떡 만들기 교실', '우리집 장 담그기', '손맛 가득 전통 반찬', '1인분 집밥 레시피'],
     'life-skills': ['간단한 옷 수선 기초', 'DIY 집수리 입문', '베란다 정원 가꾸기', '뜨개질로 만드는 따뜻함'],
     'traditional-culture': ['서예 입문 교실', '사군자 그리기 기초', '한복 바르게 입기', '다도의 기초'],
-    'life-experience': ['인생 선배의 자녀교육 이야기', '현명한 재테크 경험담', '원만한 인간관계 노하우', '건강하게 나이 드는 법'],
+    'life-experience': ['인생 선배의 자녀교육 이야기', '현명한 재테크 경험담', '원만한 인간관계 노하우', '건강하게 나이 드는 법', '경제 위기, 이렇게 극복했습니다', '취업 성공 면접 비법'],
+    'mental-wellness': ['마음을 다스리는 명상 시간', '인생 고민 상담소', '스트레스 날리는 대화법', '긍정의 힘으로 살아가기'],
     'smartphone': ['카카오톡 완전 정복', '스마트폰 사진 관리법', '필요한 앱 찾아 설치하기', '스마트폰 기초 완벽 가이드'],
     'life-it': ['모바일 뱅킹 시작하기', '키오스크 두려움 극복하기', '배달앱으로 맛있는 한끼', '교통앱으로 편한 이동'],
-    'sns': ['유튜브 200% 활용법', '인스타그램 첫걸음', '밴드로 모임 관리하기', '네이버 카페 활용법'],
+    'sns': ['유튜브 200% 활용법', '인스타그램 첫걸음', '밴드로 모임 관리하기', '네이버 카페 활용법', '숏폼 영상 만들기 도전', '가족 사진 공유 마스터'],
     'practical-tech': ['가족과 화상통화하기', '온라인 쇼핑 마스터', '소중한 사진 클라우드 백업', '스마트홈 기기 사용법'],
-    'ai-basics': ['ChatGPT로 시작하는 AI 첫걸음', 'AI로 외국어 번역 쉽게하기', 'AI 음성비서 활용법', 'AI로 사진 예쁘게 편집하기', 'AI 검색으로 똑똑하게 정보 찾기'],
+    'ai-basics': ['ChatGPT로 시작하는 AI 첫걸음', 'AI로 외국어 번역 쉽게하기', 'AI 음성비서 활용법', 'AI로 사진 예쁘게 편집하기', 'AI 검색으로 똑똑하게 정보 찾기', 'AI로 손주 사진 꾸미기', 'AI와 함께하는 건강 관리', '세대가 함께 배우는 AI'],
+    'digital-safety': ['스팸 문자 완벽 차단법', '보이스피싱 이렇게 막으세요', '내 개인정보 지키기', '안전한 온라인 결제', '가짜뉴스 구별하는 눈'],
+    'companionship': ['주간 안부 나눔', '영상으로 얼굴 보며 대화', '함께 걷는 동네 산책', '내 인생 이야기 들려주기', '세대를 넘는 대화', '취미 함께 즐기기'],
   };
 
   const titleList = titles[skill.category] || ['멘토링'];
@@ -259,7 +309,7 @@ function generateMentoring(id: number, mentor: Mentor): Mentoring {
     category: skill.category,
     duration,
     creditCost: Math.ceil(duration / 60),
-    location: '용인시',
+    location: mentor.district,
     district: mentor.district,
     isOnline: Math.random() > 0.5,
     maxParticipants,
@@ -328,7 +378,7 @@ function generateCommunityPost(id: number): CommunityPost {
     review: ['오늘 멘토링 후기입니다!', '첫 멘토링 완료!', '너무 좋은 경험이었어요', '추천하고 싶은 멘토링'],
     story: ['세대를 뛰어넘는 우정', '멘토링을 통해 배운 것들', '감동적인 만남', '이런 일이 있었어요'],
     tip: ['멘토링 잘 받는 팁', '첫 멘토링 준비하기', '효과적인 학습 방법', '이것만은 꼭 알아두세요'],
-    meetup: ['수지구 소모임 모집', '기흥구 주말 모임', '처인구 정기 모임', '관심사 모임 함께해요'],
+    meetup: ['서울 소모임 모집', '부산 주말 모임', '대구 정기 모임', '관심사 모임 함께해요'],
   };
 
   const contents: Record<CommunityPost['type'], string[]> = {
@@ -398,8 +448,8 @@ export const CURRENT_USER: Mentor = {
   age: 28,
   generation: 'youth',
   profileImage: getProfileImage(999),
-  location: '용인시',
-  district: '수지구',
+  location: '서울특별시',
+  district: '서울특별시',
   bio: '디자이너로 일하고 있습니다. 어르신들께 스마트폰 사용법을 알려드리면서 보람을 느끼고 있어요!',
   skills: [
     { id: 'skill-current-1', name: '스마트폰 기초', category: 'smartphone', description: '스마트폰 기본 사용법' },

@@ -32,23 +32,33 @@ export type SkillCategory =
   | 'life-skills'           // 생활 기술
   | 'traditional-culture'   // 전통 문화
   | 'life-experience'       // 인생 경험
+  | 'mental-wellness'       // 마음 건강 (신규)
   // 청년 → 시니어
   | 'smartphone'            // 스마트폰
   | 'life-it'               // 생활 IT
   | 'sns'                   // SNS
   | 'practical-tech'        // 실용 기술
-  | 'ai-basics';            // AI 활용
+  | 'ai-basics'             // AI 활용
+  | 'digital-safety'        // 디지털 안전 (신규)
+  // 양방향 (신규)
+  | 'companionship';        // 안부/정서교류
 
-export const SKILL_CATEGORIES: Record<SkillCategory, { name: string; icon: string; direction: 'senior-to-youth' | 'youth-to-senior' }> = {
+export const SKILL_CATEGORIES: Record<SkillCategory, { name: string; icon: string; direction: 'senior-to-youth' | 'youth-to-senior' | 'bidirectional' }> = {
+  // 시니어 → 청년
   'traditional-cooking': { name: '전통 요리', icon: '🍳', direction: 'senior-to-youth' },
   'life-skills': { name: '생활 기술', icon: '🔧', direction: 'senior-to-youth' },
   'traditional-culture': { name: '전통 문화', icon: '🎨', direction: 'senior-to-youth' },
   'life-experience': { name: '인생 경험', icon: '💡', direction: 'senior-to-youth' },
+  'mental-wellness': { name: '마음 건강', icon: '🧘', direction: 'senior-to-youth' },
+  // 청년 → 시니어
   'smartphone': { name: '스마트폰', icon: '📱', direction: 'youth-to-senior' },
   'life-it': { name: '생활 IT', icon: '💻', direction: 'youth-to-senior' },
   'sns': { name: 'SNS', icon: '📸', direction: 'youth-to-senior' },
   'practical-tech': { name: '실용 기술', icon: '🛒', direction: 'youth-to-senior' },
   'ai-basics': { name: 'AI 활용', icon: '🤖', direction: 'youth-to-senior' },
+  'digital-safety': { name: '디지털 안전', icon: '🛡️', direction: 'youth-to-senior' },
+  // 양방향
+  'companionship': { name: '안부/정서교류', icon: '💕', direction: 'bidirectional' },
 };
 
 // 멘토링 프로그램 타입
@@ -153,12 +163,30 @@ export interface Comment {
   createdAt: string;
 }
 
-// 지역 정보
-export const DISTRICTS = [
-  '수지구',
-  '기흥구',
-  '처인구',
+// 지역 정보 (전국 광역시/도)
+export const REGIONS = [
+  '서울특별시',
+  '부산광역시',
+  '대구광역시',
+  '인천광역시',
+  '광주광역시',
+  '대전광역시',
+  '울산광역시',
+  '세종특별자치시',
+  '경기도',
+  '강원특별자치도',
+  '충청북도',
+  '충청남도',
+  '전북특별자치도',
+  '전라남도',
+  '경상북도',
+  '경상남도',
+  '제주특별자치도',
   '전체',
 ] as const;
 
-export type District = typeof DISTRICTS[number];
+export type Region = typeof REGIONS[number];
+
+// 하위 호환성을 위한 별칭
+export const DISTRICTS = REGIONS;
+export type District = Region;

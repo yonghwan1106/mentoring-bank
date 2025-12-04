@@ -21,6 +21,9 @@ import {
   CheckCircle,
   BookOpen,
   GraduationCap,
+  Heart,
+  Phone,
+  Video,
 } from 'lucide-react';
 import {
   CURRENT_USER,
@@ -162,6 +165,118 @@ export default function DashboardPage() {
             <p className="text-sm text-muted-foreground text-center">
               {CURRENT_USER.mentoringCount} / {nextLevelRequirement} 멘토링 완료
             </p>
+          </CardContent>
+        </Card>
+
+        {/* 안부 멘토링 - 고독 해소 섹션 */}
+        <Card className="mb-8 border-pink-200 bg-gradient-to-r from-pink-50 to-rose-50">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div>
+                <CardTitle className="text-lg flex items-center gap-2">
+                  <Heart className="w-5 h-5 text-pink-500" />
+                  안부 멘토링
+                </CardTitle>
+                <CardDescription>
+                  정기적인 안부 확인으로 따뜻한 연결을 유지하세요
+                </CardDescription>
+              </div>
+              <Badge className="bg-pink-500 hover:bg-pink-600">NEW</Badge>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="grid md:grid-cols-3 gap-4">
+              {/* 주간 안부 전화 */}
+              <div className="p-4 rounded-lg bg-white border border-pink-100 hover:border-pink-300 transition-colors cursor-pointer">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-pink-500" />
+                  </div>
+                  <div>
+                    <p className="font-medium">주간 안부 전화</p>
+                    <p className="text-xs text-muted-foreground">10~15분 통화</p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mb-3">
+                  일주일에 한 번, 따뜻한 안부를 나눠보세요
+                </p>
+                <div className="flex items-center justify-between">
+                  <Badge variant="outline" className="text-pink-600 border-pink-200">
+                    +3 크레딧
+                  </Badge>
+                  <span className="text-xs text-muted-foreground">이번 주 2회 가능</span>
+                </div>
+              </div>
+
+              {/* 영상 안부 인사 */}
+              <div className="p-4 rounded-lg bg-white border border-pink-100 hover:border-pink-300 transition-colors cursor-pointer">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center">
+                    <Video className="w-5 h-5 text-rose-500" />
+                  </div>
+                  <div>
+                    <p className="font-medium">영상 안부 인사</p>
+                    <p className="text-xs text-muted-foreground">20~30분 화상</p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mb-3">
+                  얼굴을 보며 더 깊은 대화를 나눠보세요
+                </p>
+                <div className="flex items-center justify-between">
+                  <Badge variant="outline" className="text-rose-600 border-rose-200">
+                    +5 크레딧
+                  </Badge>
+                  <span className="text-xs text-muted-foreground">이번 주 1회 가능</span>
+                </div>
+              </div>
+
+              {/* 연결된 안부 친구 */}
+              <div className="p-4 rounded-lg bg-white border border-pink-100">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                    <Users className="w-5 h-5 text-purple-500" />
+                  </div>
+                  <div>
+                    <p className="font-medium">나의 안부 친구</p>
+                    <p className="text-xs text-muted-foreground">정기 교류 중</p>
+                  </div>
+                </div>
+                <div className="flex -space-x-2 mb-3">
+                  <Avatar className="h-8 w-8 border-2 border-white">
+                    <AvatarFallback className="text-xs bg-pink-100">김</AvatarFallback>
+                  </Avatar>
+                  <Avatar className="h-8 w-8 border-2 border-white">
+                    <AvatarFallback className="text-xs bg-rose-100">이</AvatarFallback>
+                  </Avatar>
+                  <Avatar className="h-8 w-8 border-2 border-white">
+                    <AvatarFallback className="text-xs bg-purple-100">박</AvatarFallback>
+                  </Avatar>
+                  <div className="h-8 w-8 rounded-full border-2 border-white bg-muted flex items-center justify-center text-xs text-muted-foreground">
+                    +2
+                  </div>
+                </div>
+                <Button variant="outline" size="sm" className="w-full text-pink-600 border-pink-200 hover:bg-pink-50">
+                  안부 친구 찾기
+                </Button>
+              </div>
+            </div>
+
+            {/* 안부 멘토링 통계 */}
+            <div className="mt-4 p-3 rounded-lg bg-white border border-pink-100">
+              <div className="flex items-center justify-between text-sm">
+                <div className="flex items-center gap-2">
+                  <Heart className="w-4 h-4 text-pink-500" />
+                  <span className="text-muted-foreground">이번 달 안부 교류</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <span><strong>8</strong>회 안부 전화</span>
+                  <span><strong>3</strong>회 영상 통화</span>
+                  <Badge variant="secondary" className="bg-pink-100 text-pink-700">
+                    고독 해소 히어로
+                  </Badge>
+                </div>
+              </div>
+            </div>
           </CardContent>
         </Card>
 

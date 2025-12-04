@@ -45,7 +45,7 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4">문의</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>용인시 시민사회비서관실</li>
+              <li>국무총리비서실 시민사회비서관실</li>
               <li>sanoramyun8@gmail.com</li>
             </ul>
           </div>
@@ -54,7 +54,7 @@ export function Footer() {
         <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
           <p>제4회 시민 공감大 아이디어 공모전 출품작</p>
           <p className="mt-2 md:mt-0">
-            &copy; 2024 멘토링 뱅크. 용인블루 팀.
+            &copy; 2025 멘토링 뱅크. 시민연결 팀.
           </p>
         </div>
       </div>
