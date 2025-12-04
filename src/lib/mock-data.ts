@@ -18,16 +18,16 @@ const getProfileImage = (seed: number) => `https://api.dicebear.com/7.x/personas
 
 // 배지 목록
 const BADGES: Badge[] = [
-  { id: 'badge-1', name: '첫 만남', description: '첫 멘토링 완료', icon: '🌱', earnedAt: '2024-01-15' },
-  { id: 'badge-2', name: '열정 멘토', description: '멘토링 5회 완료', icon: '🔥', earnedAt: '2024-02-20' },
-  { id: 'badge-3', name: '인기 멘토', description: '평점 4.5 이상', icon: '⭐', earnedAt: '2024-03-10' },
-  { id: 'badge-4', name: '소통왕', description: '후기 10개 작성', icon: '💬', earnedAt: '2024-04-05' },
-  { id: 'badge-5', name: '세대 연결자', description: '다른 세대와 10회 교류', icon: '🤝', earnedAt: '2024-05-15' },
-  { id: 'badge-6', name: '꾸준함', description: '3개월 연속 활동', icon: '📅', earnedAt: '2024-06-01' },
-  { id: 'badge-7', name: '나눔 대가', description: '멘토링 20회 완료', icon: '👑', earnedAt: '2024-07-20' },
-  { id: 'badge-8', name: '디지털 도우미', description: '디지털 멘토링 10회', icon: '📱', earnedAt: '2024-08-10' },
-  { id: 'badge-9', name: '전통 수호자', description: '전통문화 멘토링 10회', icon: '🏛️', earnedAt: '2024-09-05' },
-  { id: 'badge-10', name: '동네 영웅', description: '같은 지역 20회 활동', icon: '🦸', earnedAt: '2024-10-15' },
+  { id: 'badge-1', name: '첫 만남', description: '첫 멘토링 완료', icon: '🌱', earnedAt: '2025-01-15' },
+  { id: 'badge-2', name: '열정 멘토', description: '멘토링 5회 완료', icon: '🔥', earnedAt: '2025-02-20' },
+  { id: 'badge-3', name: '인기 멘토', description: '평점 4.5 이상', icon: '⭐', earnedAt: '2025-03-10' },
+  { id: 'badge-4', name: '소통왕', description: '후기 10개 작성', icon: '💬', earnedAt: '2025-04-05' },
+  { id: 'badge-5', name: '세대 연결자', description: '다른 세대와 10회 교류', icon: '🤝', earnedAt: '2025-05-15' },
+  { id: 'badge-6', name: '꾸준함', description: '3개월 연속 활동', icon: '📅', earnedAt: '2025-06-01' },
+  { id: 'badge-7', name: '나눔 대가', description: '멘토링 20회 완료', icon: '👑', earnedAt: '2025-07-20' },
+  { id: 'badge-8', name: '디지털 도우미', description: '디지털 멘토링 10회', icon: '📱', earnedAt: '2025-08-10' },
+  { id: 'badge-9', name: '전통 수호자', description: '전통문화 멘토링 10회', icon: '🏛️', earnedAt: '2025-09-05' },
+  { id: 'badge-10', name: '동네 영웅', description: '같은 지역 20회 활동', icon: '🦸', earnedAt: '2025-10-15' },
 ];
 
 // 시니어 멘토 스킬
@@ -183,7 +183,7 @@ function generateMentor(id: number, isSenior: boolean): Mentor {
     reviewCount: Math.floor(Math.random() * 30) + 1,
     mentoringCount: Math.floor(Math.random() * 50) + 1,
     badges,
-    joinedAt: `2024-${String(Math.floor(Math.random() * 12) + 1).padStart(2, '0')}-${String(Math.floor(Math.random() * 28) + 1).padStart(2, '0')}`,
+    joinedAt: `2025-${String(Math.floor(Math.random() * 11) + 1).padStart(2, '0')}-${String(Math.floor(Math.random() * 28) + 1).padStart(2, '0')}`,
     verified: Math.random() > 0.2,
   };
 }
@@ -259,7 +259,7 @@ function generateMentoring(id: number, mentor: Mentor): Mentoring {
     rating: mentor.rating,
     reviewCount: Math.floor(Math.random() * 20),
     views: Math.floor(Math.random() * 500) + 50,
-    createdAt: `2024-${String(Math.floor(Math.random() * 12) + 1).padStart(2, '0')}-${String(Math.floor(Math.random() * 28) + 1).padStart(2, '0')}`,
+    createdAt: `2025-${String(Math.floor(Math.random() * 11) + 1).padStart(2, '0')}-${String(Math.floor(Math.random() * 28) + 1).padStart(2, '0')}`,
     status: currentParticipants >= maxParticipants ? 'full' : 'active',
   };
 }
@@ -300,7 +300,7 @@ function generateReview(id: number): Review {
     content: contents[Math.floor(Math.random() * contents.length)],
     tags: selectedTags,
     likes: Math.floor(Math.random() * 30),
-    createdAt: `2024-${String(Math.floor(Math.random() * 12) + 1).padStart(2, '0')}-${String(Math.floor(Math.random() * 28) + 1).padStart(2, '0')}`,
+    createdAt: `2025-${String(Math.floor(Math.random() * 11) + 1).padStart(2, '0')}-${String(Math.floor(Math.random() * 28) + 1).padStart(2, '0')}`,
   };
 }
 
@@ -360,7 +360,7 @@ function generateCommunityPost(id: number): CommunityPost {
     likes: Math.floor(Math.random() * 50),
     comments: [],
     tags: tags[type],
-    createdAt: `2024-${String(Math.floor(Math.random() * 12) + 1).padStart(2, '0')}-${String(Math.floor(Math.random() * 28) + 1).padStart(2, '0')}`,
+    createdAt: `2025-${String(Math.floor(Math.random() * 11) + 1).padStart(2, '0')}-${String(Math.floor(Math.random() * 28) + 1).padStart(2, '0')}`,
   };
 }
 
@@ -398,7 +398,7 @@ export const CURRENT_USER: Mentor = {
   reviewCount: 15,
   mentoringCount: 23,
   badges: BADGES.slice(0, 5),
-  joinedAt: '2024-03-15',
+  joinedAt: '2025-03-15',
   verified: true,
 };
 
@@ -409,10 +409,10 @@ export const CURRENT_USER_CREDITS = {
   totalEarned: 25,
   totalSpent: 16,
   history: [
-    { id: 'tx-1', type: 'bonus' as const, amount: 3, description: '가입 축하 크레딧', createdAt: '2024-03-15' },
-    { id: 'tx-2', type: 'earn' as const, amount: 2, description: '스마트폰 기초 멘토링 제공', mentoringId: 'mentoring-1', createdAt: '2024-04-01' },
-    { id: 'tx-3', type: 'spend' as const, amount: 1, description: '김장 담그기 멘토링 수강', mentoringId: 'mentoring-5', createdAt: '2024-04-15' },
-    { id: 'tx-4', type: 'earn' as const, amount: 2, description: '카카오톡 사용법 멘토링 제공', mentoringId: 'mentoring-2', createdAt: '2024-05-01' },
-    { id: 'tx-5', type: 'spend' as const, amount: 2, description: '서예 입문 멘토링 수강', mentoringId: 'mentoring-10', createdAt: '2024-05-20' },
+    { id: 'tx-1', type: 'bonus' as const, amount: 3, description: '가입 축하 크레딧', createdAt: '2025-03-15' },
+    { id: 'tx-2', type: 'earn' as const, amount: 2, description: '스마트폰 기초 멘토링 제공', mentoringId: 'mentoring-1', createdAt: '2025-04-01' },
+    { id: 'tx-3', type: 'spend' as const, amount: 1, description: '김장 담그기 멘토링 수강', mentoringId: 'mentoring-5', createdAt: '2025-04-15' },
+    { id: 'tx-4', type: 'earn' as const, amount: 2, description: '카카오톡 사용법 멘토링 제공', mentoringId: 'mentoring-2', createdAt: '2025-05-01' },
+    { id: 'tx-5', type: 'spend' as const, amount: 2, description: '서예 입문 멘토링 수강', mentoringId: 'mentoring-10', createdAt: '2025-05-20' },
   ],
 };

@@ -58,7 +58,7 @@ const pendingApplications = [
     mentoring: MENTORINGS[0],
     applicant: MENTORS[5],
     message: '안녕하세요! 요리에 관심이 많은 청년입니다. 기본기부터 배우고 싶습니다.',
-    appliedAt: '2024-01-15',
+    appliedAt: '2025-11-25',
     status: 'pending' as const,
   },
   {
@@ -66,7 +66,7 @@ const pendingApplications = [
     mentoring: MENTORINGS[0],
     applicant: MENTORS[10],
     message: '어머니와 함께 요리하던 추억이 있어서 신청하게 되었습니다.',
-    appliedAt: '2024-01-14',
+    appliedAt: '2025-11-24',
     status: 'pending' as const,
   },
 ];
